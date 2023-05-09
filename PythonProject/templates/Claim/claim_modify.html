@@ -1,0 +1,57 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/claim.css' %}" />
+<div id="claim_EditDiv">
+	<form id="claimModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">认领id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="claim_claimId_modify" name="claim.claimId" value="{{ claimId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">招领信息:</span>
+			<span class="inputControl">
+				<input class="textbox"  id="claim_lostFoundObj_lostFoundId_modify" name="claim.lostFoundObj.lostFoundId" style="width: auto"/>
+			</span>
+		</div>
+		<div>
+			<span class="label">认领人:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="claim_personName_modify" name="claim.personName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">认领时间:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="claim_claimTime_modify" name="claim.claimTime" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">描述说明:</span>
+			<span class="inputControl">
+				<textarea id="claim_contents_modify" name="claim.contents" rows="8" cols="60"></textarea>
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">发布时间:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="claim_addTime_modify" name="claim.addTime" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="claimModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/Claim/claim_modify.js' %}"></script>

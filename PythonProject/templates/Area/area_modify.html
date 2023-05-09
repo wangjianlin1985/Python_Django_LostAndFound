@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/area.css' %}" />
+<div id="area_EditDiv">
+	<form id="areaModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">区域id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="area_areaId_modify" name="area.areaId" value="{{ areaId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">区域名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="area_areaName_modify" name="area.areaName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="areaModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/Area/area_modify.js' %}"></script>

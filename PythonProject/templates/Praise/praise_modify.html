@@ -1,0 +1,49 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/praise.css' %}" />
+<div id="praise_EditDiv">
+	<form id="praiseModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">表扬id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="praise_praiseId_modify" name="praise.praiseId" value="{{ praiseId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">招领信息:</span>
+			<span class="inputControl">
+				<input class="textbox"  id="praise_lostFoundObj_lostFoundId_modify" name="praise.lostFoundObj.lostFoundId" style="width: auto"/>
+			</span>
+		</div>
+		<div>
+			<span class="label">标题:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="praise_title_modify" name="praise.title" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">表扬内容:</span>
+			<span class="inputControl">
+				<textarea id="praise_contents_modify" name="praise.contents" rows="8" cols="60"></textarea>
+
+			</span>
+
+		</div>
+		<div>
+			<span class="label">表扬时间:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="praise_addTime_modify" name="praise.addTime" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="praiseModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/Praise/praise_modify.js' %}"></script>
